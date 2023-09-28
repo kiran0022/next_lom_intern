@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.primaryBtnClass{
+  background-color: blueviolet;
+}
+.secondaryBtnClass{
+  
+}
+.subtitleClass {
+  font-weight: 500;
+  padding: 12px;
+  font-size: small;
+ 
+}
+.contentClass {
+  margin-top: 12rem;
+  height: 140px;
+  font-size: small;
+  font-weight: 400;
+  
+}
+.wrapperClass {
+  height: 80vh;
+
+}
+.stepClass{
+  font-size: smaller;
+  font-weight: 600;
+}
+.buttonWrapperClass{
+  
+}
+.labelClass{
+  margin-top: 1rem;
+
+}
+.progressClass{
+
+font-size: large;
+font-weight: 400;
+
+}
+/* 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
