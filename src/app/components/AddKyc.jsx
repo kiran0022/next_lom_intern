@@ -10,18 +10,18 @@ export default function AddKyc() {
     control,
   } = useForm();
   const router = useRouter();
-  const decodeBase64 = () => {
-    if (fileData) {
-      try {
-        const decodedData = atob(fileData);
-        console.log(decodedData);
-      } catch (error) {
-        console.error("Error decoding Base64:", error);
-      }
-    } else {
-      console.warn("No file data to decode.");
-    }
-  };
+  // const decodeBase64 = () => {
+  //   if (fileData) {
+  //     try {
+  //       const decodedData = atob(fileData);
+  //       console.log(decodedData);
+  //     } catch (error) {
+  //       console.error("Error decoding Base64:", error);
+  //     }
+  //   } else {
+  //     console.warn("No file data to decode.");
+  //   }
+  // };
   const [Base64String, setBase64String] = useState("");
 
   const onSubmit = async (data) => {
