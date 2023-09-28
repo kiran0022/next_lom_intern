@@ -10,22 +10,21 @@ export default function AddKyc() {
     control,
   } = useForm();
   const router = useRouter();
-  const decodeBase64 = () => {
-    if (fileData) {
-      try {
-        const decodedData = atob(fileData);
-        console.log(decodedData);
-      } catch (error) {
-        console.error("Error decoding Base64:", error);
-      }
-    } else {
-      console.warn("No file data to decode.");
-    }
-  };
+  // const decodeBase64 = () => {
+  //   if (fileData) {
+  //     try {
+  //       const decodedData = atob(fileData);
+  //       console.log(decodedData);
+  //     } catch (error) {
+  //       console.error("Error decoding Base64:", error);
+  //     }
+  //   } else {
+  //     console.warn("No file data to decode.");
+  //   }
+  // };
   const [Base64String, setBase64String] = useState("");
 
   const onSubmit = async (data) => {
-    console.log(data);
     const file = data.kyc;
     if (file) {
       const reader = new FileReader();
@@ -103,13 +102,7 @@ export default function AddKyc() {
         <label htmlFor="id" className="block text-stone-500">
           Document
         </label>
-        {/* <input
-          type="file"
-          id="kyc"
-          name="kyc"
-          {...register("kyc", { required: true })}
-          // onChange={(e) => setFile(e.target.files?.[0])}
-        /> */}
+
         <Controller
           control={control}
           name={"kyc"}
