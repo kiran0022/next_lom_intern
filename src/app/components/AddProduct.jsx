@@ -108,16 +108,6 @@ export default function AddUser() {
     } catch (error) {
       console.log(error);
     }
-    // return fetch("/api/recipes/create", {
-    //   method: "POST",
-    //   body: formData,
-    // }).then((response) => {
-    //   if (response.ok) {
-    //     // Handle successful upload
-    //   } else {
-    //     // Handle error
-    //   }
-    // });
   };
 
   return (

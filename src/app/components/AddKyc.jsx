@@ -37,6 +37,7 @@ export default function AddKyc() {
     data = { ...data, kyc: Base64String };
 
     const { name, address, contact, kyc } = data;
+
     console.log(kyc, data);
 
     try {
@@ -49,8 +50,8 @@ export default function AddKyc() {
       });
 
       if (res.ok) {
-        console.log("response", res.json());
-        router.push("/admin/kyc");
+        const result = await res.json();
+        result._id && router.push("/admin/kyc");
         router.refresh();
       } else {
         throw new Error("failed to create product");

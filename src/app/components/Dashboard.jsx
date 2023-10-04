@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 
 import { Chart } from "react-google-charts";
+import { Line, LineChart } from "recharts";
 
 export default function Dashboard() {
   const dataOld = [
@@ -68,10 +69,24 @@ export default function Dashboard() {
     [" ", 30, 30],
     ["", 30, 30],
   ];
+
+  // -------------------------------------------------
+
+  const returnData = [
+    { name: "Page A", uv: 100, pv: 400, amt: 400 },
+    { name: "Page B", uv: 120, pv: 400, amt: 400 },
+    { name: "Page B", uv: 100, pv: 400, amt: 400 },
+    { name: "Page B", uv: 100, pv: 400, amt: 400 },
+  ];
+  const returnChart = (
+    <LineChart width={100} height={400} data={returnData}>
+      <Line type="monotone" dataKey="uv" stroke="#FF0000" strokeWidth={4} />
+    </LineChart>
+  );
   return (
     <section className="grid grid-cols-5 gap-4 justify-around">
       <div>
-        <div className=" max-w-[140px] ml-10 flex flex-col gap-10 text-center rounded-md shadow-md">
+        <div className=" max-w-[140px] ml-10 flex flex-col gap-6 text-center rounded-md shadow-md">
           <div className="mt-7 bg-red-700 rounded-2xl w-16 self-center h-16  justify-center">
             <AiFillMinusCircle className="inline text-4xl mt-3 text-white " />
           </div>
@@ -79,13 +94,13 @@ export default function Dashboard() {
             <p className="text-sm text-stone-500">Flagged items</p>
             <p className="text-start ml-5 text-3xl ">500</p>
           </div>
-          <div className="bg-red-700 max-w-max self-center py-1 px-2 text-sm text-white rounded-lg mb-16">
+          <div className="bg-red-700 max-w-max self-center py-1 px-2 text-sm text-white rounded-lg mb-10">
             <AiOutlineArrowUp className="inline text-lg" /> 3.45%
           </div>
         </div>
       </div>
       <div>
-        <div className=" max-w-[140px] flex flex-col gap-10 text-center rounded-md shadow-md">
+        <div className=" max-w-[140px] flex flex-col gap-6 text-center rounded-md shadow-md">
           <div className="mt-7 bg-teal-600 rounded-2xl w-16 self-center h-16  justify-center">
             <AiFillPlusCircle className="inline text-4xl mt-3 text-white " />
           </div>
@@ -93,7 +108,7 @@ export default function Dashboard() {
             <p className="text-sm text-stone-500">Flagged items</p>
             <p className="text-start ml-5 text-3xl ">500</p>
           </div>
-          <div className="bg-teal-600 max-w-max self-center py-1 px-2 text-sm text-white rounded-lg mb-16">
+          <div className="bg-teal-600 max-w-max self-center py-1 px-2 text-sm text-white rounded-lg mb-10">
             <AiOutlineArrowUp className="inline text-lg" /> 3.45%
           </div>
         </div>
@@ -109,15 +124,15 @@ export default function Dashboard() {
         />
       </div>
 
-      <div className=" ml-24 mt-3 col-span-2 w-[240px] flex flex-col gap-8 text-center rounded-md shadow-md ">
-        <div className="mt-7 bg-blue-700 rounded-2xl w-16 self-center h-16  justify-center">
+      <div className=" ml-24 mt-1 col-span-2 w-[240px] flex flex-col gap-8 text-center rounded-md shadow-md ">
+        <div className="mt-4 bg-blue-700 rounded-2xl w-16 self-center h-16  justify-center">
           <AiOutlineUsergroupAdd className="inline text-4xl mt-3 text-white " />
         </div>
         <div>
           <p>KYC registrations</p>
           <p className="text-start ml-14 text-3xl">60,586</p>
         </div>
-        <div className="bg-blue-700 max-w-max self-center py-1 px-2 text-sm text-white rounded-lg mb-10">
+        <div className="bg-blue-700 max-w-max self-center py-1 px-2 text-sm text-white rounded-lg mb-5">
           <AiOutlineArrowUp className="inline text-lg" /> 3.45%
         </div>
       </div>
@@ -129,13 +144,14 @@ export default function Dashboard() {
           </p>
           <p className="mt-5 font-semibold">500</p>
         </div>
-        <Chart
+        {/* <Chart
           width="100%"
           height="100px"
           chartType="Line"
           data={data}
           options={returns}
-        />
+        /> */}
+        <div> {returnChart}</div>
       </div>
     </section>
   );

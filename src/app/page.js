@@ -16,8 +16,6 @@ export default async function page() {
   //$2a$10$n54gRV1.fUilSFdEiDZZCOV7.5sQivbHQBjz2Z2.Wdnm49Vgf5dpK
   return (
     <div>
-      <h1>hi</h1>
-
       <SignInForm />
     </div>
   );

@@ -6,7 +6,7 @@ import ShippingTable from "./ShippingTable";
 export default function Inventory({ data }) {
   return (
     <div className="mx-4 h-[80vh] overflow-auto scrollbar-hide">
-      <h2 className="text-2xl font-bold ml-4">Overall Inventory</h2>
+      <h2 className="text-2xl font-bold ml-4">Overall Orders</h2>
       <div className="flex mt-5 gap-20">
         <ul className=" w-56 border-r-2 flex flex-col gap-3 mx-5">
           <li className="font-semibold text-blue-600 text-lg">Total Orders</li>

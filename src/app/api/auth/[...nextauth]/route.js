@@ -4,6 +4,8 @@ import User from "../../../../../models/users";
 import { connectDB } from "@/utils/mongoose";
 import bcrypt from "bcryptjs";
 
+const NEXTAUTH_SECRET = "R2SBypNexU1tZ0bp0w6FbubovGXiIKd52x5yE9JBEFU=";
+
 export const authOptions = {
   providers: [
     CredentialsProvider({
@@ -36,7 +38,8 @@ export const authOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  // secret: process.env.NEXTAUTH_SECRET,
+  secret: NEXTAUTH_SECRET,
   pages: {
     signIn: "/",
   },

@@ -1,5 +1,5 @@
 "use client";
-import { signOut } from "next-auth/react";
+
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -11,9 +11,6 @@ export default function KYC({ data }) {
   return (
     <div className=" ml-10 grid grid-flow-col col-span-2">
       <div>
-        <button onClick={() => signOut()} className="bg-red-500 text-white p-3">
-          sign out
-        </button>
         <div className="text-center flex rounded-md h-24 px-6 gap-28 max-w-max shadow-md">
           <div className=" bg-red-700 rounded-2xl w-14 self-center h-14 shadow-lg">
             <FaUserGroup className="inline text-3xl mt-3 text-white " />
@@ -24,6 +21,16 @@ export default function KYC({ data }) {
             <p className="text-2xl font-semibold">75 </p>
           </div>
         </div>
+        <button className="mt-3">
+          {" "}
+          <Link
+            href={"/admin/kyc/addKyc"}
+            className="cursor-pointer p-2 bg-blue-500 rounded-md text-sm"
+          >
+            Add New KYC
+          </Link>
+        </button>
+
         <div className="flex flex-col gap-3 mt-6 shadow-md max-w-md rounded-md p-6">
           <h2 className="font-semibold text-xl p-4">Customers</h2>
           {data.map((user) => {
@@ -81,12 +88,16 @@ export default function KYC({ data }) {
             user._id === selectedUser;
           })
         )} */}
-        <iframe
-          width="100%"
-          height="450px"
-          src={selectedUser}
-          title="W3Schools Free Online Web Tutorials"
-        ></iframe>{" "}
+        {selectedUser ? (
+          <iframe
+            width="100%"
+            height="450px"
+            src={selectedUser}
+            title="W3Schools Free Online Web Tutorials"
+          ></iframe>
+        ) : (
+          <h2>No document!</h2>
+        )}
       </div>
     </div>
   );
