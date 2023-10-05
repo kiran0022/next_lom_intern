@@ -13,8 +13,6 @@ export async function POST(request) {
 
 export async function GET() {
   await connectDB();
-
   const products = await Kyc.find();
-
   return NextResponse.json(products);
 }

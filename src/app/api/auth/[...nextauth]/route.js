@@ -18,7 +18,6 @@ export const authOptions = {
         try {
           await connectDB();
           const user = await User.findOne({ id });
-
           if (!user) {
             return null;
           }

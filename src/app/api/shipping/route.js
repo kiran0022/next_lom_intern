@@ -13,7 +13,7 @@ export async function POST(req) {
   const data = await req.json();
   await Shipping.create(data);
   return NextResponse.json({ message: "created shipping data" });
-
+  // method-2
   //     const newProduct = new Product(data);
   //   const saveProduct = await newProduct.save();
   //   return NextResponse.json(saveProduct, { status: 201 });

@@ -11,12 +11,6 @@ export async function POST(request) {
   const newProduct = new Product(data);
   const saveProduct = await newProduct.save();
   return NextResponse.json(saveProduct, { status: 200 });
-
-  //myidea
-  //try
-  // console.log(request.json());
-
-  return NextResponse.json();
 }
 
 export async function GET() {

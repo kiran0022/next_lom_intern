@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/utils/mongoose";
-import React from "react";
+
 import User from "../../../../models/users";
 
 export async function POST(request) {

@@ -26,6 +26,8 @@ export default function AddKyc() {
 
   const onSubmit = async (data) => {
     const file = data.kyc;
+    console.log(data.kyc);
+
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -48,16 +50,19 @@ export default function AddKyc() {
           "Content-Type": "application/json",
         },
       });
+      const result = await res.json();
+      result.kyc ?? router.push("/admin/kyc");
+      router.refresh();
 
-      setTimeout(async () => {
-        if (res.ok) {
-          const result = await res.json();
-          result._id && router.push("/admin/kyc");
-          router.refresh();
-        } else {
-          throw new Error("failed to create product");
-        }
-      }, 2000);
+      // setTimeout(async () => {
+      //   if (res.ok) {
+      //     const result = await res.json();
+      //     result._id && router.push("/admin/kyc");
+      //     router.refresh();
+      //   } else {
+      //     throw new Error("failed to create product");
+      //   }
+      // }, 2000);
     } catch (error) {
       console.log(error);
     }
@@ -105,8 +110,16 @@ export default function AddKyc() {
         <label htmlFor="id" className="block text-stone-500">
           Document
         </label>
+        <input
+          onChange={(event) => {
+            event.target.files?.[0];
+          }}
+          type="file"
+          id="kyc"
+          name="kyc"
+        />
 
-        <Controller
+        {/* <Controller
           control={control}
           name={"kyc"}
           rules={{ required: "kyc is required" }}
@@ -124,7 +137,7 @@ export default function AddKyc() {
               />
             );
           }}
-        />
+        /> */}
         {errors.kyc && <p className="text-red-500">kyc document required</p>}
       </div>
 
