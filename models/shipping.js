@@ -2,10 +2,10 @@ import { Schema, model, models } from "mongoose";
 
 const shippingSchema = new Schema(
   {
-    product: String,
-    orderValue: Number,
-    quantity: Number,
     orderID: Number,
+    product: String,
+    quantity: Number,
+    price: Number,
     expectedDelivery: { type: Date, default: Date.now },
     status: String,
   },
