@@ -30,7 +30,7 @@ export default function ProductTable({ data }) {
                     scope="col"
                     className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                   >
-                    Invoice
+                    Unit Price
                   </th>
                   {/* <th
                                         scope="col"
@@ -80,7 +80,8 @@ export default function ProductTable({ data }) {
                         {item.quantity}
                       </td>
                       <td>
-                        <a
+                        {item.unit}
+                        {/* <a
                           href={item.invoice}
                           download="Invoice_doc"
                           className=" mt-5 px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
@@ -89,7 +90,7 @@ export default function ProductTable({ data }) {
                             <FaDownload className="inline mr-1 -mt-1 " />
                             Download invoice
                           </button>
-                        </a>
+                        </a> */}
                       </td>
 
                       {/* <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">

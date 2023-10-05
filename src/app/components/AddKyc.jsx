@@ -49,13 +49,15 @@ export default function AddKyc() {
         },
       });
 
-      if (res.ok) {
-        const result = await res.json();
-        result._id && router.push("/admin/kyc");
-        router.refresh();
-      } else {
-        throw new Error("failed to create product");
-      }
+      setTimeout(async () => {
+        if (res.ok) {
+          const result = await res.json();
+          result._id && router.push("/admin/kyc");
+          router.refresh();
+        } else {
+          throw new Error("failed to create product");
+        }
+      }, 2000);
     } catch (error) {
       console.log(error);
     }

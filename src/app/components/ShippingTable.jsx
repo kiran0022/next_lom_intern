@@ -13,13 +13,13 @@ export default function ShippingTable({ data }) {
                     scope="col"
                     className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                   >
-                    Products
+                    Order ID
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                   >
-                    Order Value
+                    Products
                   </th>
                   <th
                     scope="col"
@@ -31,7 +31,7 @@ export default function ShippingTable({ data }) {
                     scope="col"
                     className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                   >
-                    Order ID
+                    price
                   </th>
                   <th
                     scope="col"
@@ -65,16 +65,16 @@ export default function ShippingTable({ data }) {
                   <tbody className="divide-y divide-gray-200 max-h-16 overflow-y-scroll">
                     <tr className=" ">
                       <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                        {item.product}
+                        {item.orderID}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                        {item.orderValue}
+                        {item.product}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
                         {item.quantity}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                        {item.orderID}
+                        {item.price}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {new Date(item.expectedDelivery).toLocaleDateString()}

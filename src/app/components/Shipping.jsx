@@ -50,13 +50,13 @@ export default function Inventory({ data }) {
           <h3 className="font-semibold ">Products</h3>
         </div>
         <div className="text-sm">
-          {/* <button className="px-2 py-1 bg-blue-600 text-white mx-2 rounded-md">
+          <button className="px-2 py-1 bg-blue-600 text-white mx-2 rounded-md">
             Add product
           </button>
           <button className="mx-2 border-2 rounded-md px-2 py-1">
             <AiFillFilter className="inline -mt-1 text-lg  " />
             Filters
-          </button> */}
+          </button>
           <button className="px-2 py-1 mx-6 border-2  rounded-md">
             Order history
           </button>

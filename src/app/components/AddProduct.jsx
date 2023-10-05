@@ -47,20 +47,20 @@ export default function AddUser() {
   //   }
   // };
 
-  const [Base64String, setBase64String] = useState("");
+  // const [Base64String, setBase64String] = useState("");
 
   const onSubmit = async (data) => {
-    const file = data.invoice;
+    // const file = data.invoice;
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const base64 = e.target.result;
-        setBase64String(base64);
-      };
-      reader.readAsDataURL(file);
-    }
-    data = { ...data, invoice: Base64String };
+    // if (file) {
+    //   const reader = new FileReader();
+    //   reader.onload = (e) => {
+    //     const base64 = e.target.result;
+    //     setBase64String(base64);
+    //   };
+    //   reader.readAsDataURL(file);
+    // }
+    // data = { ...data, invoice: Base64String };
 
     // const encode = btoa(data.invoice);
 
@@ -87,12 +87,12 @@ export default function AddUser() {
 
     // console.log("form dataaaa", formData);
 
-    const { product, quantity, invoice } = data;
+    const { product, quantity, unit } = data;
 
     try {
       const res = await fetch("http://localhost:3000/api/products", {
         method: "POST",
-        body: JSON.stringify({ product, quantity, invoice }),
+        body: JSON.stringify({ product, quantity, unit }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -145,10 +145,16 @@ export default function AddUser() {
         title="W3Schools Free Online Web Tutorials"
       ></iframe> */}
       <div className="text-start mt-6">
-        <label htmlFor="invoice" className="block text-stone-500">
-          Invoice
+        <label htmlFor="unit" className="block text-stone-500">
+          Unit Price
         </label>
-
+        <input
+          {...register("unit", { required: true })}
+          type="number"
+          id="quantity"
+          className="outline-none w-96 border-regal-blue border-[1px] p-2 rounded-md mt-2"
+        />
+        {errors.unit && <p className="text-red-500">Unit price is required</p>}
         {/* <input
           type="file"
           id="invoice"
@@ -157,7 +163,7 @@ export default function AddUser() {
           onChange={(e) => setFile(e.target.files?.[0])}
         /> */}
 
-        <Controller
+        {/* <Controller
           control={control}
           name={"invoice"}
           rules={{ required: "invoice is required" }}
@@ -175,7 +181,7 @@ export default function AddUser() {
               />
             );
           }}
-        />
+        /> */}
       </div>
 
       {/* <div className="text-start mt-6">

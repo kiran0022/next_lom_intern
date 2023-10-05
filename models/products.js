@@ -4,7 +4,7 @@ const productSchema = new Schema(
   {
     product: String,
     quantity: Number,
-    invoice: String,
+    unit: Number,
   },
   {
     timestamps: true,
