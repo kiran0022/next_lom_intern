@@ -1,35 +1,62 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { AiFillFilter } from "react-icons/ai";
 import ShippingTable from "./ShippingTable";
 export default function Inventory({ data }) {
+  const [totalOrders, setTotalOrders] = useState(0);
+  const [totalReceived, setTotalReceived] = useState(0);
+  const [totalReturn, setTotalReturn] = useState(0);
+  const [totalDelay, setTotalDelay] = useState(0);
+
+  useEffect(() => {
+    setTotalReturn(
+      () =>
+        data.filter((item) => item.status.toLowerCase() == "returned").length
+    );
+
+    setTotalOrders(() => data.length);
+
+    setTotalReceived(
+      () =>
+        data.filter((item) => item.status.toLowerCase() == "confirmed").length
+    );
+
+    setTotalDelay(
+      () => data.filter((item) => item.status.toLowerCase() == "delayed").length
+    );
+  }, [data]);
+
+  // const retunred = data.filter((item) => item.status == "Returned");
+
+  // console.log(totalReturn);
+
   return (
     <div className="mx-4 h-[80vh] overflow-auto scrollbar-hide">
       <h2 className="text-2xl font-bold ml-4">Overall Orders</h2>
       <div className="flex mt-5 gap-20">
         <ul className=" w-56 border-r-2 flex flex-col gap-3 mx-5">
           <li className="font-semibold text-blue-600 text-lg">Total Orders</li>
-          <li className="font-semibold">37</li>
+          <li className="font-semibold">{totalOrders}</li>
           <li className="text-stone-500 text-sm">Last 7 days</li>
         </ul>
         <ul className=" w-64  border-r-2 flex flex-col gap-3 px-6">
           <li className="font-semibold text-yellow-500 text-lg">
             Total Received
           </li>
-          <li className="font-semibold">32</li>
+          <li className="font-semibold">{totalReceived}</li>
           <li className="text-stone-500 text-sm">Last 7 days</li>
         </ul>
         <ul className=" w-64  border-r-2 flex flex-col gap-3 px-6">
           <li className="font-semibold text-purple-700 text-lg">
             Total Returned
           </li>
-          <li className="font-semibold">5</li>
+          <li className="font-semibold">{totalReturn}</li>
           <li className="text-stone-500 text-sm">Last 7 days cost</li>
         </ul>
         <ul className=" w-60 text-right  border-r-2 flex flex-col gap-3 px-6">
           <li className="font-semibold text-orange-700 text-lg">On the way</li>
-          <li className="font-semibold">12</li>
+          <li className="font-semibold">{totalDelay}</li>
           <li className="text-stone-500 text-sm">Ordered</li>
         </ul>
 

@@ -79,7 +79,7 @@ export default function ProductTable({ data }) {
                       <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
                         {item.quantity}
                       </td>
-                      <td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
                         {item.unit}
                         {/* <a
                           href={item.invoice}

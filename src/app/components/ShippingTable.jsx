@@ -74,7 +74,7 @@ export default function ShippingTable({ data }) {
                         {item.quantity}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                        {item.price}
+                        ₹{item.price}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-800  whitespace-nowrap">
                         {new Date(item.expectedDelivery).toLocaleDateString()}
