@@ -1,4 +1,3 @@
-import React from "react";
 import { connectDB } from "@/utils/mongoose";
 import Product from "../../../../models/products";
 import { NextResponse } from "next/server";

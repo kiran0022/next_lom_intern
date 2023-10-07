@@ -3,7 +3,7 @@ export async function getAllShipping() {
     cache: "no-cache",
   });
 
-  if (!res.ok) throw new Error("error while fetching shipping data");
+  if (!res.ok) throw new Error("Error while fetching shipping data");
 
   return res.json();
 }

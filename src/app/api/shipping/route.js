@@ -11,10 +11,6 @@ export async function GET() {
 export async function POST(request) {
   await connectDB();
   const data = await request.json();
-  await Shipping.create(data);
-  return NextResponse.json({ message: "created shipping data" });
-  // method-2
-  //     const newProduct = new Product(data);
-  //   const saveProduct = await newProduct.save();
-  //   return NextResponse.json(saveProduct, { status: 201 });
+  const res = await Shipping.create(data);
+  return NextResponse.json(res, { status: 200 });
 }

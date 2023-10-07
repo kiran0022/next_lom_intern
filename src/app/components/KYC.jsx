@@ -57,40 +57,11 @@ export default function KYC({ data }) {
               </div>
             );
           })}
-
-          {/* <div className="flex gap-4">
-          <div className="w-16 h-16 rounded-full bg-green-700"></div>
-          <div>
-            <p>Jacob Jones</p>
-            <p>today</p>
-          </div>
-        </div>
-        <div className="flex gap-4">
-          <div className="w-16 h-16 rounded-full bg-green-700"></div>
-          <div>
-            <p>enny Wilson</p>
-            <p>today</p>
-          </div>
-        </div>
-        <div className="flex gap-4">
-          <div className="w-16 h-16 rounded-full bg-green-700"></div>
-          <div>
-            <p>Leslie Alexander</p>
-            <p>today</p>
-          </div>
-        </div> */}
         </div>
       </div>
       <div className="mr-6">
-        <h2 className="text-4xl">
-          fix add kyc sometimes not working properly base64 add kyc component
-        </h2>
         <h2 className="self-center mb-3">Document preview</h2>
-        {/* {setSelect(() =>
-          data.filter((user) => {
-            user._id === selectedUser;
-          })
-        )} */}
+
         {selectedUser ? (
           <iframe
             width="100%"

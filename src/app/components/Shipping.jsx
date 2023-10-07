@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 import { AiFillFilter } from "react-icons/ai";
 import ShippingTable from "./ShippingTable";
 export default function Inventory({ data }) {
@@ -26,10 +26,6 @@ export default function Inventory({ data }) {
       () => data.filter((item) => item.status.toLowerCase() == "delayed").length
     );
   }, [data]);
-
-  // const retunred = data.filter((item) => item.status == "Returned");
-
-  // console.log(totalReturn);
 
   return (
     <div className="mx-4 h-[80vh] overflow-auto scrollbar-hide">
@@ -59,27 +55,18 @@ export default function Inventory({ data }) {
           <li className="font-semibold">{totalDelay}</li>
           <li className="text-stone-500 text-sm">Ordered</li>
         </ul>
-
-        {/* <div className="flex border-r-2 px-6">
-          <ul className=" w-48  flex flex-col gap-3 ">
-            <li className="font-semibold text-blue-600 text-lg">Total Re</li>
-            <li className="font-semibold">14</li>
-            <li className="text-stone-500 text-sm">Ordered</li>
-          </ul>
-          <ul className="flex flex-col-reverse gap-2">
-            <li className="text-stone-500">Not in stock</li>
-            <li className="font-semibold">2</li>
-          </ul>
-        </div> */}
       </div>
       <div className="flex justify-between mt-7 ">
         <div className="ml-3 mb-5">
           <h3 className="font-semibold ">Products</h3>
         </div>
         <div className="text-sm">
-          <button className="px-2 py-1 bg-blue-600 text-white mx-2 rounded-md">
-            Add product
-          </button>
+          <Link href={"/admin/shipping/addShipping"}>
+            <button className="px-2 py-1 bg-blue-600 text-white mx-2 rounded-md">
+              Add product
+            </button>
+          </Link>
+
           <button className="mx-2 border-2 rounded-md px-2 py-1">
             <AiFillFilter className="inline -mt-1 text-lg  " />
             Filters

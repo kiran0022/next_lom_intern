@@ -45,19 +45,6 @@ export default function ShippingTable({ data }) {
                   >
                     Status
                   </th>
-
-                  {/* <th
-                                        scope="col"
-                                        className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-                                    >
-                                        Edit
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-                                    >
-                                        Delete
-                                    </th> */}
                 </tr>
               </thead>
               {data.map((item) => {
@@ -92,23 +79,6 @@ export default function ShippingTable({ data }) {
                       >
                         {item.status}
                       </td>
-
-                      {/* <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                        <a
-                                            className="text-green-500 hover:text-green-700"
-                                            href="#"
-                                        >
-                                            Edit
-                                        </a>
-                                    </td>
-                                    <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                        <a
-                                            className="text-red-500 hover:text-red-700"
-                                            href="#"
-                                        >
-                                            Delete
-                                        </a>
-                                    </td> */}
                     </tr>
                   </tbody>
                 );
