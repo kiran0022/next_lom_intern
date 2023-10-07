@@ -17,6 +17,5 @@ export async function GET() {
   await connectDB();
 
   const products = await Product.find();
-
   return NextResponse.json(products);
 }
