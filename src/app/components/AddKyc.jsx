@@ -51,7 +51,7 @@ export default function AddKyc() {
         },
       });
       const result = await res.json();
-      result.kyc ?? router.push("/admin/kyc");
+      result.kyc && router.push("/admin/kyc");
       router.refresh();
 
       // setTimeout(async () => {
@@ -110,16 +110,7 @@ export default function AddKyc() {
         <label htmlFor="id" className="block text-stone-500">
           Document
         </label>
-        <input
-          onChange={(event) => {
-            event.target.files?.[0];
-          }}
-          type="file"
-          id="kyc"
-          name="kyc"
-        />
-
-        {/* <Controller
+        <Controller
           control={control}
           name={"kyc"}
           rules={{ required: "kyc is required" }}
@@ -137,7 +128,7 @@ export default function AddKyc() {
               />
             );
           }}
-        /> */}
+        />
         {errors.kyc && <p className="text-red-500">kyc document required</p>}
       </div>
 

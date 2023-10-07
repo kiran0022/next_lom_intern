@@ -18,7 +18,7 @@ export default function KYC({ data }) {
 
           <div className="mt-5">
             <p className="text-sm text-stone-500">total </p>
-            <p className="text-2xl font-semibold">75 </p>
+            <p className="text-2xl font-semibold">{data.length} </p>
           </div>
         </div>
         <button className="mt-3">
