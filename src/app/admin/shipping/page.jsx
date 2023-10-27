@@ -8,4 +8,3 @@ export default async function Page() {
 
   return <Shipping data={data} />;
 }
-export const runtime = "edge";
