@@ -8,3 +8,5 @@ export default function page() {
     </div>
   );
 }
+
+export const runtime = "edge";

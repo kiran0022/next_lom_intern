@@ -10,3 +10,4 @@ export default function page() {
 }
 
 // render the progress bar
+export const runtime = "edge";

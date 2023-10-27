@@ -7,3 +7,4 @@ export default async function Page() {
 
   return <Inventory data={data} />;
 }
+export const runtime = "edge";
