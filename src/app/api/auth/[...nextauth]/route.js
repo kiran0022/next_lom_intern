@@ -44,6 +44,17 @@ export const authOptions = {
   //     return session;
   //   },
   // },
+
+  // callbacks: {
+  //   async signIn({ id }) {
+  //     const isAllowed = true;
+  //     if (isAllowed) return true;
+  //     else {
+  //       return false;
+  //     }
+  //   },
+  // },
+
   session: {
     strategy: "jwt",
   },
