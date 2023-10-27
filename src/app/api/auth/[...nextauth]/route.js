@@ -34,16 +34,16 @@ export const authOptions = {
       },
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) token.role = user.role;
-      return token;
-    },
-    async session({ session, token }) {
-      if (session?.user) session.user.role = token.role;
-      return session;
-    },
-  },
+  // callbacks: {
+  //   async jwt({ token, user }) {
+  //     if (user) token.role = user.role;
+  //     return token;
+  //   },
+  //   async session({ session, token }) {
+  //     if (session?.user) session.user.role = token.role;
+  //     return session;
+  //   },
+  // },
   session: {
     strategy: "jwt",
   },
