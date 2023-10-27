@@ -9,7 +9,7 @@ const NEXTAUTH_SECRET = "R2SBypNexU1tZ0bp0w6FbubovGXiIKd52x5yE9JBEFU=";
 export const authOptions = {
   providers: [
     CredentialsProvider({
-      name: "credentials",
+      name: "Credentials",
       credentials: {},
 
       async authorize(credentials) {
