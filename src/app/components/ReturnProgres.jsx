@@ -3,9 +3,9 @@
 import React from "react";
 import styled from "styled-components";
 import "../../app/globals.css";
-import StepProgressBar from "react-step-progress";
+// import StepProgressBar from "react-step-progress";
 // import the stylesheet
-import "react-step-progress/dist/index.css";
+// import "react-step-progress/dist/index.css";
 
 export default function ReturnProgres() {
   const step1Content = (
@@ -58,7 +58,8 @@ export default function ReturnProgres() {
 
   return (
     <div className="">
-      <StepProgressBar
+      <h1 className="text-3xl">retruns process need to fixed</h1>
+      {/* <StepProgressBar
         startingStep={0}
         onSubmit={onFormSubmit}
         steps={[
@@ -101,7 +102,7 @@ export default function ReturnProgres() {
         labelClass="labelClass"
         submitBtnName=""
         previousBtnName=""
-      />
+      /> */}
     </div>
   );
 }
