@@ -17,7 +17,7 @@ export default function AddShipping() {
 
     console.log(orderID, product, quantity, date, price, status);
     try {
-      const res = await fetch("http://localhost:3000/api/shipping", {
+      const res = await fetch(`${process.env.API_URL}/api/shipping`, {
         method: "POST",
         body: JSON.stringify({
           orderID,

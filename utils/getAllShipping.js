@@ -1,5 +1,5 @@
 export async function getAllShipping() {
-  const res = await fetch("http://localhost:3000/api/shipping", {
+  const res = await fetch(`${process.env.API_URL}/api/shipping`, {
     cache: "no-cache",
   });
 

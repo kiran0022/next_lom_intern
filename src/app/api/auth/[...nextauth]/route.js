@@ -40,7 +40,7 @@ export const authOptions = {
 
   secret: NEXTAUTH_SECRET,
   pages: {
-    signIn: "/admin",
+    signIn: "/",
   },
 };
 

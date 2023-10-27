@@ -1,5 +1,5 @@
 export default async function getAllProduct() {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch(`${process.env.API_URL}/api/products`, {
     cache: "no-store",
   });
 

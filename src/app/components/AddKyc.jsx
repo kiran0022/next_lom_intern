@@ -43,7 +43,7 @@ export default function AddKyc() {
     console.log(kyc, data);
 
     try {
-      const res = await fetch("http://localhost:3000/api/kyc", {
+      const res = await fetch(`${process.env.API_URL}/api/kyc`, {
         method: "POST",
         body: JSON.stringify({ name, address, contact, kyc }),
         headers: {

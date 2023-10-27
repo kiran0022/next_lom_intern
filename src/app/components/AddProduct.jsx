@@ -18,7 +18,7 @@ export default function AddUser() {
     const { product, quantity, unit } = data;
 
     try {
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch(`${process.env.API_URL}/api/products`, {
         method: "POST",
         body: JSON.stringify({ product, quantity, unit }),
         headers: {
