@@ -20,3 +20,5 @@ export default async function dashboard() {
     </div>
   );
 }
+
+export const runtime = "edge";
