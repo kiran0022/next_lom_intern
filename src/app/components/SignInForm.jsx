@@ -19,7 +19,8 @@ export default function SignInForm() {
       const res = await signIn("credentials", {
         id,
         password,
-        redirect: false,
+        // redirect: false,
+        callbackUrl: "/admin/dashboard",
       });
 
       if (res.error) {
@@ -28,7 +29,7 @@ export default function SignInForm() {
         return;
       }
 
-      router.replace("admin/dashboard");
+      // router.replace("admin/dashboard");
     } catch (err) {
       console.log(err);
     }
